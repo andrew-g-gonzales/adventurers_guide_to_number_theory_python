@@ -9,11 +9,6 @@ def make_successive_elem_group(elems, grouped=2):
     return [elems[index:index + grouped] for index in range(0, len(elems) - 1)]
 
 
-def operate_pairs(elems, operation=lambda unused: True):
-    (first, second) = elems
-    return operation(first, second)
-
-
 def summed(nums):
     return reduce(lambda x, y: x + y, nums, 1)
 

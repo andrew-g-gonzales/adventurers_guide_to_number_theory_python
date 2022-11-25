@@ -1,14 +1,13 @@
 from adventures import utils
 
 group = utils.make_successive_elem_group
-pair = utils.operate_pairs
 summed = utils.summed
 perfect_square = utils.perfect_square
 
 
 if __name__ == "__main__":
     result_pd_2 = all(
-        [pair(grp, lambda x, y: x * y) % 2 == 0 for grp in group(range(1, 21))]
+        [(x * y) % 2 == 0 for (x, y) in group(range(1, 21))]
     )
     print(f"The product of two consecutive integers is always even: {result_pd_2}")
 
