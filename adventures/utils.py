@@ -1,3 +1,10 @@
+def reduce(operation, nums, initializer):
+    value = initializer
+    for elem in nums:
+        value = operation(value, elem)
+    return value
+
+
 def make_successive_elem_group(elems, grouped=2):
     return [elems[index:index + grouped] for index in range(0, len(elems) - 1)]
 
@@ -7,31 +14,16 @@ def operate_pairs(elems, operation=lambda unused: True):
     return operation(first, second)
 
 
-def reduce(elems, initial_elem, operation=lambda unused: True):
-    acc = initial_elem
-    for elem in elems:
-        acc = operation(acc, elem)
-    return acc
-
-
 def summed(nums):
-    return reduce(nums, 1, lambda x, y: x + y)
+    return reduce(lambda x, y: x + y, nums, 1)
 
 
 def product(nums):
-    return reduce(nums, 1, lambda x, y: x * y)
+    return reduce(lambda x, y: x * y, nums, 1)
 
 
 def pow_exp(num, power):
     return num ** power
-
-
-def squared(num):
-    return pow_exp(num, 2)
-
-
-def cube(num):
-    return pow_exp(num, 3)
 
 
 def square_rt(num):
@@ -40,9 +32,3 @@ def square_rt(num):
 
 def perfect_square(num):
     return (int(square_rt(num) + 0.5)) ** 2 == num
-
-
-def filtered(elems, condition=lambda unused: True):
-    return [elem for elem in elems if (condition(elem))]
-
-
