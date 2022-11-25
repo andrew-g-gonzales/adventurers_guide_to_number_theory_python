@@ -48,5 +48,3 @@ def filtered(elems, condition=lambda unused: True):
     return [elem for elem in elems if (condition(elem))]
 
 
-if __name__ == "__main__":
-    print(pow_exp(3, 3))
