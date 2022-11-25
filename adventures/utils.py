@@ -2,11 +2,9 @@ def make_successive_elem_group(elems, grouped=2):
     return [elems[index:index + grouped] for index in range(0, len(elems) - 1)]
 
 
-def operate_pairs(elems, initial_elem, operation=lambda unused: True):
-    acc = initial_elem
-    for (first, second) in make_successive_elem_group(elems):
-        acc = operation(first, second)
-    return acc
+def operate_pairs(elems, operation=lambda unused: True):
+    (first, second) = elems
+    return operation(first, second)
 
 
 def reduce(elems, initial_elem, operation=lambda unused: True):
