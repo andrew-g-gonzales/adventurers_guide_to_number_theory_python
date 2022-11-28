@@ -27,3 +27,17 @@ def square_rt(num):
 
 def perfect_square(num):
     return (int(square_rt(num) + 0.5)) ** 2 == num
+
+
+def perfect_cube(num):
+    return round(abs(num) ** (1 / 3)) ** 3 == num
+
+
+def is_prime(num):
+    return False if num < 2 else all([num % x != 0 for x in range(2, num)])
+
+
+def gen_primes(num):
+    return list([x for x in range(2, num) if is_prime(x)])
+
+
