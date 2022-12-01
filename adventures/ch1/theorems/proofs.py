@@ -42,4 +42,5 @@ if __name__ == "__main__":
     print(f"The sum of two cubes is never a cube: {result_sq_cube_sum}")
 
     twin_primes = generate_twin_primes(gen_primes(1000))
+    print(f"{len(twin_primes)} twin primes under 1000",)
     print(twin_primes)
