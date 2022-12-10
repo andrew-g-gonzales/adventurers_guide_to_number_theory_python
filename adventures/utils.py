@@ -6,11 +6,11 @@ def reduce(operation, nums, initializer):
 
 
 def make_successive_elem_group(elems, grouped=2):
-    return [elems[index : index + grouped] for index in range(0, len(elems) - 1)]
+    return [elems[index: index + grouped] for index in range(0, len(elems) - 1)]
 
 
 def summed(nums):
-    return reduce(lambda x, y: x + y, nums, 1)
+    return reduce(lambda x, y: x + y, nums, 0)
 
 
 def product(nums):
@@ -18,7 +18,7 @@ def product(nums):
 
 
 def pow_exp(num, power):
-    return num**power
+    return num ** power
 
 
 def square_rt(num):
@@ -39,3 +39,15 @@ def is_prime(num):
 
 def gen_primes(num):
     return list([x for x in range(2, num) if is_prime(x)])
+
+
+def flatten(nested_list):
+    return [num for sublist in nested_list for num in sublist]
+
+
+def odd_seq(num):
+    return list(range(1, num * 2, 2))
+
+
+def average(nums):
+    return summed(nums) / len(nums)
